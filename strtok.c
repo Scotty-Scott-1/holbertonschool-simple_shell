@@ -25,20 +25,21 @@ void shell_strtok(char *input,  char **argv)
 
 	token = strtok(input, " \n");
 	while (token != NULL)
-	{
-		count++;
-		token = strtok(NULL, " \n");
-	}
+	{ count++;
+	token = strtok(NULL, " \n"); }
 	count++;
 	argv = (char **)malloc(sizeof(char *) * count);
 	token = strtok(strcopy, " \n");
 	for (i = 0; token != NULL; i++)
-	{
-		argv[i] = strdup(token);
-		token = strtok(NULL, " \n");
-		/*printf("%s\n", argv[i]);*/
-	}
+	{ argv[i] = strdup(token);
+	token = strtok(NULL, " \n"); }
 	argv[i] = NULL;
+
+	if (count == 1 && strlen(argv[0]) == 0)
+	{ free(strcopy);
+	free(argv);
+	return; }
+
 	command = argv[0];
 	child_pid = fork();
 	if (child_pid == -1)
@@ -48,8 +49,7 @@ void shell_strtok(char *input,  char **argv)
 	else
 	waitpid(child_pid, &status, 0);
 	for (i = 0; i < count; i++)
-	{
-	free(argv[i]);
+	{ free(argv[i]);
 	}
 	free(strcopy);
 	free(argv);
