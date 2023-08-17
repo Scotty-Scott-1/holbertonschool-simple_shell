@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
 	argc += 1;
 	do {
-		printf("$ ");
+		/*printf("$ ");*/
 		read = getline(&input, &len, stdin);
 		if (read == -1)
 		{
