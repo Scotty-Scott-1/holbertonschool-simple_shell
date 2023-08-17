@@ -15,7 +15,7 @@
 */
 void shell_strtok(char *input,  char **argv)
 {
-	char *strcopy = NULL, *token = NULL, *command;
+	char *strcopy = NULL, *token = NULL, *command, *og_argv0 = argv[0];
 	int count = 0, i = 0, status;
 	pid_t child_pid;
 
@@ -36,7 +36,7 @@ void shell_strtok(char *input,  char **argv)
 	{
 		argv[i] = strdup(token);
 		token = strtok(NULL, " \n");
-		printf("%s\n", argv[i]);
+		/*printf("%s\n", argv[i]);*/
 	}
 	argv[i] = NULL;
 	command = argv[0];
@@ -44,7 +44,7 @@ void shell_strtok(char *input,  char **argv)
 	if (child_pid == -1)
 	perror("fork failed");
 	else if (child_pid == 0)
-	exec_command(command);
+	exec_command(command, og_argv0);
 	else
 	waitpid(child_pid, &status, 0);
 	for (i = 0; i < count; i++)

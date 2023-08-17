@@ -11,6 +11,6 @@
 
 int main(int argc, char **argv);
 void shell_strtok(char *input,  char **argv);
-void exec_command(char *command);
+void exec_command(char *command, char *og_argv0);
 
 #endif /* MAIN_H */
