@@ -7,24 +7,22 @@
 #include <fcntl.h>
 #include <string.h>
 #include "main.h"
-
 /**
- * shell_strtok - Entry point
- * @input: character pointer
- * @argv: character double pointer
- * Return: void
- */
-
+* shell_strtok - Entry point
+* @input: character pointer
+* @argv: character double pointer
+* Return: void
+*/
 void shell_strtok(char *input,  char **argv)
 {
-	char *strcopy = NULL, *token = NULL;
-	int count = 0, i = 0;
+	char *strcopy = NULL, *token = NULL, *command;
+	int count = 0, i = 0, status;
+	pid_t child_pid;
 
 	strcopy = strdup(input);
 	if (strcopy == NULL)
-	{
-		perror("couldn't read");
-	}
+	perror("couldn't read");
+
 	token = strtok(input, " \n");
 	while (token != NULL)
 	{
@@ -40,10 +38,21 @@ void shell_strtok(char *input,  char **argv)
 		token = strtok(NULL, " \n");
 		printf("%s\n", argv[i]);
 	}
+	argv[i] = NULL;
+	command = argv[0];
+	child_pid = fork();
+	if (child_pid == -1)
+	perror("fork failed");
+	else if (child_pid == 0)
+	exec_command(command);
+	else
+	waitpid(child_pid, &status, 0);
 	for (i = 0; i < count; i++)
 	{
 	free(argv[i]);
 	}
 	free(strcopy);
 	free(argv);
+
+
 }

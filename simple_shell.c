@@ -18,7 +18,8 @@
 
 int main(int argc, char **argv)
 {
-	char *input = NULL; /**inputcopy = NULL;*/
+
+	char *input = NULL; /*inputcopy = NULL;*/
 	size_t len = 0;
 	ssize_t read;
 
@@ -28,12 +29,16 @@ int main(int argc, char **argv)
 		read = getline(&input, &len, stdin);
 		if (read == -1)
 		{
-			perror("couldn't read");
+			if (feof(stdin))
+			{
 			break;
+			}
 		}
 		shell_strtok(input, argv);
 
 	} while (1);
 	free(input);
+
+
 	return (0);
 }
