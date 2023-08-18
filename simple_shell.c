@@ -1,11 +1,3 @@
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <fcntl.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -18,22 +10,26 @@
 
 int main(int argc, char **argv)
 {
+	char *prompt = "(ssh) $ ";
 	char *input = NULL; /**inputcopy = NULL;*/
 	size_t len = 0;
 	ssize_t read;
 
+	(void)argv;
 	argc += 1;
-	do {
-		printf("$ ");
+	while(1)
+	{
+	 	printf("%s", prompt);
 		read = getline(&input, &len, stdin);
 		if (read == -1)
 		{
 			perror("couldn't read");
-			break;
+			return (-1);
 		}
+		
 		shell_strtok(input, argv);
-
-	} while (1);
+		printf("%s\n", input);
 	free(input);
+	}
 	return (0);
 }
