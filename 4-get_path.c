@@ -6,6 +6,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+/**
+ * get_path - function that Get the path object
+ * @command: pointer to a string 
+ * Return: NULL if the path doesn't exist or pointer 
+ */
 char *get_path(char *command)
 {
 	char *path = NULL;
@@ -40,7 +45,7 @@ char *get_path(char *command)
 		{
 			return (command);
 		}
-		
+
 		return (NULL);
 	}
 

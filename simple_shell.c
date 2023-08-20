@@ -1,26 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 
-
+/**
+ * main - runs the shell program
+ *
+ * Return: 0 on success
+ */
 int main(int ac, char **argv)
 {
-	ssize_t read_result = 0;
-	char *input = NULL;
-	size_t len = 0;
-	char *input_copy = NULL;
-	int i = 0;
-	int counter_nb = 1;
+	ssize_t read_result = 0, len = 0;
+	char *input = NULL, *input_copy = NULL;
+	int i = 0, counter_nb = 1;
 	char *progam_name = argv[0];
 
 (void) ac;
-	while (1) {
-	/*	printf("$ ");*/
+	while (1) 
+	{
 		read_result = getline(&input, &len, stdin);
 
-		if(read_result == -1)
+		if (read_result == -1)
 		{
 			break;
 		}
@@ -32,7 +29,7 @@ int main(int ac, char **argv)
 		execute_command(argv, counter_nb, input, progam_name);
 		counter_nb++;
 
-		for (i = 0;argv[i] != NULL; i++)
+		for (i = 0; argv[i] != NULL; i++)
 		{
 			free(argv[i]);
 		}
@@ -43,12 +40,4 @@ int main(int ac, char **argv)
 free(input);
 
 return(0);
-
-
-
-
-
-
-
-
 }

@@ -4,7 +4,7 @@
 #include <string.h>
 #include "main.h"
 
-char ** tokenize_array(char *input, char **argv, char *input_copy)
+char **tokenize_array(char *input, char **argv, char *input_copy)
 {
 	const char *delim = " \n";
 	char *token = NULL;
@@ -13,7 +13,7 @@ char ** tokenize_array(char *input, char **argv, char *input_copy)
 
 
 		token = strtok(input, delim);
-		if(token == NULL)
+		if (token == NULL)
 		free(token);
 		while (token != NULL)
 		{
