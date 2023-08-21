@@ -2,10 +2,10 @@
 
 /**
  * execute_command - function that execute the command
- * @argv:a pointer to and array of pointers to a characters
- * @i:index or counter using withing a function 
- * @input:user's input 
- * @program_name:name of the program being execute 
+ * @argv: a pointer to and array of pointers to a characters
+ * @i: index or counter using withing a function
+ * @input: user's input
+ * @program_name:name of the program being execute
  * Return:always success
  */
 

@@ -8,13 +8,14 @@
  */
 int main(int ac, char **argv)
 {
-	ssize_t read_result = 0, len = 0;
+	ssize_t read_result = 0;
+	size_t len = 0;
 	char *input = NULL, *input_copy = NULL;
 	int i = 0, counter_nb = 1;
 	char *progam_name = argv[0];
-	
+
 (void) ac;
-while (1) 
+	while (1)
 	{
 		read_result = getline(&input, &len, stdin);
 

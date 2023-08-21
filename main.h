@@ -6,10 +6,12 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 
 extern char **environ;
 char *copy_input(ssize_t read_result, char *input);
 char *get_path_value(void);
+char *get_env_var(const char *var_name);
 int main(int ac, char **argv);
 void execute_command(char **argv, int i, char *input, char *program_name);
 char *get_path(char *command);
