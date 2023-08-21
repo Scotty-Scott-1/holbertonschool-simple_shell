@@ -17,6 +17,7 @@ int main(int ac, char **argv)
 (void) ac;
 	while (1)
 	{
+		printf("$ ");
 		read_result = getline(&input, &len, stdin);
 
 		if (read_result == -1)
@@ -28,7 +29,9 @@ int main(int ac, char **argv)
 
 		argv = tokenize_array(input, argv, input_copy);
 
+		if(argv[0] != NULL)
 		execute_command(argv, counter_nb, input, progam_name);
+
 		counter_nb++;
 
 		for (i = 0; argv[i] != NULL; i++)
