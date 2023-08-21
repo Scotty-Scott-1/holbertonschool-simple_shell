@@ -18,4 +18,5 @@ char *get_path(char *command);
 char *get_input(void);
 char **tokenize_array(char *input, char **argv, char *input_copy);
 char *concat__command(char *command, char *path_token);
+void __exit(char * input, char *name, char *input_copy, char **argv);
 #endif /* MAIN_H */
