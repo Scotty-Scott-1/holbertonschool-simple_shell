@@ -17,23 +17,30 @@ char **tokenize_array(char *input, char **argv, char *input_copy)
 
 
 		token = strtok(input, delim);
-		if (token == NULL)
-		free(token);
-		while (token != NULL)
+		if (token != NULL)
 		{
 			token_count++;
 			token = strtok(NULL, delim);
-
 		}
-		token_count++;
-
+		
 		argv = malloc(sizeof(char *) * token_count);
+		
+		if (argv == NULL)
+		{
+			perror("malloc");
+			exit(1);
+		}
 
 		for (i = 0, token = strtok(input_copy, delim); token != NULL; i++)
 		{
 			argv[i] = malloc(strlen(token) + 1);
-			strcpy(argv[i], token);
-			token = strtok(NULL, delim);
+        if (argv[i] == NULL)
+        {
+            perror("malloc");
+            exit(1);
+        }	
+		strcpy(argv[i], token);
+		token = strtok(NULL, delim);
 		}
 			argv[i] = NULL;
 

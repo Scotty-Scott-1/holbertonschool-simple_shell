@@ -18,7 +18,7 @@ char *copy_input(ssize_t read_result, char *input)
 		exit(-1);
 	}
 
-	strcpy(input_copy, input);
+	strncpy(input_copy, input);
 
 return (input_copy);
 }
