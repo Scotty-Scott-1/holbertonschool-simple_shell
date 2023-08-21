@@ -9,7 +9,7 @@ char *get_env_var(const char *var_name);
 /**
  *get_path_value - Get the path value object
  * 
- * @return char* 
+ * return:char 
  */
 
 char *get_path_value(void)

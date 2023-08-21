@@ -2,8 +2,8 @@
 
 /**
  *concat__command - function that concat file and path
- * @command: parameter to concatenate 
- * @path_token: parameter to concatenate with command 
+ * @command:parameter to concatenate 
+ * @path_token:parameter to concatenate with command 
  * @return: pointer to the new string concat
  */
 char *concat__command(char *command, char *path_token)

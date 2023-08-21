@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
-#include <sys/types.h>
-#include <sys/stat.h>
 
 /**
  * get_path - function that Get the path object

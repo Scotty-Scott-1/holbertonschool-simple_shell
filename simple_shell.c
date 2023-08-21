@@ -13,8 +13,8 @@ int main(int ac, char **argv)
 	int i = 0, counter_nb = 1;
 	char *progam_name = argv[0];
 	
-	(void) ac;
-	while (1) 
+(void) ac;
+while (1) 
 	{
 		read_result = getline(&input, &len, stdin);
 
@@ -41,4 +41,5 @@ int main(int ac, char **argv)
 free(input);
 
 return (0);
+
 }
