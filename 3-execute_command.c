@@ -8,13 +8,12 @@
  * @program_name:name of the program being execute
  * Return:always success
  */
-
 void execute_command(char **argv, int i, char *input, char *program_name)
 {
 	char *command = NULL, *full_path = NULL;
 	pid_t pid;
 	int status;
-	if (argv)
+	if (argv && argv[0] && argv[0][0] != '\0')
 	{
 
 		command = argv[0];
@@ -35,8 +34,13 @@ void execute_command(char **argv, int i, char *input, char *program_name)
 			}
 			wait(&status);
 		}
+		else if (argv == NULL) 
+		{
+			printf("%s: %d: %s: command not provided\n", program_name, i, input);
+		}
 		else
 		{
-			printf("%s: %d: %s: not found\n", program_name, i, input);
-		}
-	}
+			 printf("%s: %d: %s: command not found\n", program_name, i, input);
+        }
+	
+} 
