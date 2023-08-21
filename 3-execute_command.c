@@ -14,7 +14,6 @@ void execute_command(char **argv, int i, char *input, char *program_name)
 	char *command = NULL, *full_path = NULL;
 	pid_t pid;
 	int status;
-
 	if (argv)
 	{
 
@@ -23,8 +22,9 @@ void execute_command(char **argv, int i, char *input, char *program_name)
 		full_path = get_path(command);
 
 		if (full_path != NULL)
-		{
+		{			
 			pid = fork();
+		}
 
 			if (pid == 0)
 			{
@@ -40,4 +40,3 @@ void execute_command(char **argv, int i, char *input, char *program_name)
 			printf("%s: %d: %s: not found\n", program_name, i, input);
 		}
 	}
-}
