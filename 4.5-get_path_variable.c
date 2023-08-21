@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * @environ: environnement variable
- */
-extern char **environ;
-/**
  * get_env_var - function to get the environnement variable
  * @var_name:the parameter to search
  * Return: the value of the parameter or NULL
  */
 char *get_env_var(const char *var_name);
+/**
+ *get_path_value - Get the path value object
+ * 
+ * @return char* 
+ */
 
 char *get_path_value(void)
 {
@@ -31,7 +32,8 @@ char *get_env_var(const char *var_name)
 
 	while (env[i] != NULL)
 	{
-		if (strncmp(env[i], var_name, strlen(var_name)) == 0 && env[i][strlen(var_name)] == '=')
+		if (strncmp(env[i], var_name, strlen(var_name)) == 0 && 
+		env[i][strlen(var_name)] == '=')
 		{
 			return (env[i] + strlen(var_name) + 1);
 		}

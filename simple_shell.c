@@ -2,7 +2,8 @@
 
 /**
  * main - runs the shell program
- *
+ *@ac: number of arguments comand-line argument passed to the program
+ *@argv: array of pointers to characters
  * Return: 0 on success
  */
 int main(int ac, char **argv)
@@ -11,8 +12,8 @@ int main(int ac, char **argv)
 	char *input = NULL, *input_copy = NULL;
 	int i = 0, counter_nb = 1;
 	char *progam_name = argv[0];
-
-(void) ac;
+	
+	(void) ac;
 	while (1) 
 	{
 		read_result = getline(&input, &len, stdin);
@@ -39,5 +40,5 @@ int main(int ac, char **argv)
 	}
 free(input);
 
-return(0);
+return (0);
 }

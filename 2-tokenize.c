@@ -1,8 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
+/**
+ * tokenize_array - function that takes a string as input and tokenizes it
+ * @input: The string to be tokenised.
+ * @argv: array of chararcters where pointers to be stored;
+ * @input_copy:  A copy of the input string used for tokenization.
+ *
+ * Return: argv
+ */
 
 char **tokenize_array(char *input, char **argv, char *input_copy)
 {

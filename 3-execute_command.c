@@ -1,12 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
-#include <sys/types.h>
-#include <sys/wait.h>
 
-extern char **environ;
+/**
+ * execute_command - function that execute the command
+ * @argv: a pointer to and array of pointers to a characters
+ * @i: index or counter using withing a function 
+ * @input: user's input 
+ * @program_name: name of the program being execute 
+ * Return:always success
+ */
 
 void execute_command(char **argv, int i, char *input, char *program_name)
 {

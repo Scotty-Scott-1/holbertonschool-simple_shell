@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-
+extern char **environ;
 char *copy_input(ssize_t read_result, char *input);
 char *get_path_value(void);
 int main(int ac, char **argv);

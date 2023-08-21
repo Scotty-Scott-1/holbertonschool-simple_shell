@@ -8,8 +8,8 @@
 
 /**
  * get_path - function that Get the path object
- * @command: pointer to a string 
- * Return: NULL if the path doesn't exist or pointer 
+ * @command:pointer to a string 
+ * Return:NULL if the path doesn't exist or pointer 
  */
 char *get_path(char *command)
 {
