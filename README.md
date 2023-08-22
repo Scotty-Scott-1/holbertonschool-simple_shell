@@ -5,14 +5,11 @@ first quarter end project; consisting of recreating a Simple Shell program in C 
 
 A "simple shell" refers to a type of computer program that provides a command-line user interface to interact with an operating system. The term "shell" denotes a command-line environment that allows the user to input textual commands to execute operations and programs on an operating system.
 
-
 ## Appendix
-
-
 
 main.h : reference all prototype
 
-1-copy_input.c : 
+1-copy_input.c :
 
 2-tokenize.c : Tokenize the entry Prompt
 
@@ -30,20 +27,16 @@ Readme.md : you are Here ;-)
 
 Authors: project collaborators
 
-
-
-
-
-
 ## FlowChart
+
 ![Complete Flowchart](https://github.com/Scotty-Scott-1/holbertonschool-simple_shell/blob/main/Complete%20FlowChart.jpg?raw=true)
 
 # Authors of project
 
-Letitia Habib 
+Letitia Habib
 
-Solomon William 
+Solomon William
 
-Gael Deschamps 
+Gael Deschamps
 
-From #C21 Holberton School Laval 
+From #C21 Holberton School Laval
