@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - runs the shell program
  *@ac: number of arguments comand-line argument passed to the program
@@ -13,45 +12,39 @@ int main(int ac, char **argv)
 	char *input = NULL, *input_copy = NULL;
 	int i = 0, counter_nb = 1;
 	char *progam_name = argv[0];
+	char **token_array;
+	int status = 0;
+	(void) ac;
 
-
-(void) ac;
 	while (1)
 	{
+		if (isatty(STDIN_FILENO) == 1)
 		printf("$ ");
 		read_result = getline(&input, &len, stdin);
-
 		if (read_result == -1)
 		{
 			break;
 		}
-
 		input_copy = copy_input(read_result, input);
-
-		argv = tokenize_array(input, argv, input_copy);
-
-		if(argv[0] != NULL)
+		token_array = tokenize_array(input, argv, input_copy);
+		if (token_array[0] != NULL)
 		{
-			if(strcmp(argv[0], "exit") == 0)
+			if (strcmp(token_array[0], "exit") == 0)
 			{
-				__exit(input, argv[0], input_copy, argv);
+				__exit(input, token_array[0], input_copy, token_array, status);
 			}
 		}
-		if(argv[0] != NULL && strcmp(argv[0], "exit") != 0)
-		execute_command(argv, counter_nb, input, progam_name);
-
+		if (token_array[0] != NULL && strcmp(argv[0], "exit") != 0)
+		status = execute_command(token_array, counter_nb, input, progam_name,
+		status);
 		counter_nb++;
-
-		for (i = 0; argv[i] != NULL; i++)
+		for (i = 0; token_array[i] != NULL; i++)
 		{
-			free(argv[i]);
+			free(token_array[i]);
 		}
-
-		free(argv);
+		free(token_array);
 		free(input_copy);
 	}
-free(input);
-
-return (0);
-
+	free(input);
+	return (0);
 }
