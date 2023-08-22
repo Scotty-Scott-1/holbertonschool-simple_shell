@@ -25,5 +25,5 @@ void __exit(char *input, char *name, char *input_copy, char **argv, int stat)
 	free(input_copy);
 
 	exit(stat);
-return;
+
 }

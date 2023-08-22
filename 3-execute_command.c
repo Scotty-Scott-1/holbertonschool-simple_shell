@@ -21,33 +21,36 @@ int status_e)
 
 	if (argv)
 	{
-
 		command = argv[0];
-
 		full_path = get_path(command);
-
 		if (full_path != NULL)
 		{
 			pid = fork();
-
 			if (pid == 0)
 			{
 				if (execve(full_path, argv, environ) == -1)
 				{
-
-					return (2);
+					status_e = 127;
+					return (status_e);
 				}
 			}
 			wait(&status);
 			free(full_path);
+			if (WEXITSTATUS(status_e) == 2)
+			{
+			status_e = 2;
+			return (status_e);
+			}
 		}
 		else
 		{
 			printf("%s: %d: %s: not found\n", program_name, i, input);
-			return (127);
-
+			status_e = 127;
+			return (status_e);
 		}
-		return (0);
+		status_e = 0;
+		return (status_e);
 	}
-	return (2);
+	status_e = 0;
+	return (status_e);
 }
