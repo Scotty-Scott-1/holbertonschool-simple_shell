@@ -15,9 +15,7 @@ int status_e)
 {
 	char *command = NULL, *full_path = NULL;
 	pid_t pid;
-	int status;
-
-	(void) status_e;
+	status_e = 0;
 
 	if (argv)
 	{
@@ -34,7 +32,7 @@ int status_e)
 					return (status_e);
 				}
 			}
-			wait(&status);
+			wait(&status_e);
 			free(full_path);
 			if (WEXITSTATUS(status_e) == 2)
 			{
@@ -45,12 +43,13 @@ int status_e)
 		else
 		{
 			printf("%s: %d: %s: not found\n", program_name, i, input);
+
 			status_e = 127;
 			return (status_e);
 		}
 		status_e = 0;
 		return (status_e);
 	}
-	status_e = 0;
+
 	return (status_e);
 }
