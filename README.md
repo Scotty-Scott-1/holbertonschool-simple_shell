@@ -21,6 +21,8 @@ main.h : reference all prototype
 
 5-cat_file_and_path.c : concat File & path
 
+6-exit.c : command for exit shell
+
 simple_shell.c : the Heart of the program
 
 Readme.md : you are Here ;-)
