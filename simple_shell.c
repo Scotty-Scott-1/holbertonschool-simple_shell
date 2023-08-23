@@ -46,5 +46,5 @@ int main(int ac, char **argv)
 		free(input_copy);
 	}
 	free(input);
-	return (0);
+	return (status);
 }
