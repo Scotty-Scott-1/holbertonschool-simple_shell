@@ -3,7 +3,7 @@
 /**
  *get_path_value - Get the path value object
  *
- * return: NULL
+ * Return: NULL
  */
 
 char *get_path_value(void)

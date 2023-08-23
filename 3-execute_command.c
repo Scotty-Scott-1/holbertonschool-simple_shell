@@ -5,42 +5,52 @@
  * @argv: a pointer to and array of pointers to a characters
  * @i: index or counter using withing a function
  * @input: user's input
+ * @status_e: void
  * @program_name:name of the program being execute
  * Return:always success
  */
-void execute_command(char **argv, int i, char *input, char *program_name)
+
+int execute_command(char **argv, int i, char *input, char *program_name,
+int status_e)
 {
 	char *command = NULL, *full_path = NULL;
 	pid_t pid;
 	int status;
-	if (argv && argv[0] && argv[0][0] != '\0')
+
+	(void) status_e;
+
+	if (argv)
 	{
-
 		command = argv[0];
-
 		full_path = get_path(command);
-
 		if (full_path != NULL)
-		{			
+		{
 			pid = fork();
-		}
-
 			if (pid == 0)
 			{
 				if (execve(full_path, argv, environ) == -1)
 				{
-					exit(0);
+					status_e = 127;
+					return (status_e);
 				}
 			}
 			wait(&status);
-		}
-		else if (argv == NULL) 
-		{
-			printf("%s: %d: %s: command not provided\n", program_name, i, input);
+			free(full_path);
+			if (WEXITSTATUS(status_e) == 2)
+			{
+			status_e = 2;
+			return (status_e);
+			}
 		}
 		else
 		{
-			 printf("%s: %d: %s: command not found\n", program_name, i, input);
-        }
-	
-} 
+			printf("%s: %d: %s: not found\n", program_name, i, input);
+			status_e = 127;
+			return (status_e);
+		}
+		status_e = 0;
+		return (status_e);
+	}
+	status_e = 0;
+	return (status_e);
+}

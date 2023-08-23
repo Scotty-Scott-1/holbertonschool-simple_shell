@@ -14,35 +14,29 @@ char **tokenize_array(char *input, char **argv, char *input_copy)
 	char *token = NULL;
 	int token_count = 0;
 	int i = 0;
+	char **token_array;
 
+(void) argv;
 
 		token = strtok(input, delim);
-		if (token != NULL)
+
+		while (token != NULL)
 		{
 			token_count++;
 			token = strtok(NULL, delim);
+
 		}
-		
-		argv = malloc(sizeof(char *) * token_count);
-		
-		if (argv == NULL)
-		{
-			perror("malloc");
-			exit(1);
-		}
+		token_count++;
+
+		token_array = malloc(sizeof(char *) * token_count);
 
 		for (i = 0, token = strtok(input_copy, delim); token != NULL; i++)
 		{
-			argv[i] = malloc(strlen(token) + 1);
-        if (argv[i] == NULL)
-        {
-            perror("malloc");
-            exit(1);
-        }	
-		strcpy(argv[i], token);
-		token = strtok(NULL, delim);
+			/*argv[i] = malloc(strlen(token) + 1);*/
+			token_array[i] = strdup(token);
+			token = strtok(NULL, delim);
 		}
-			argv[i] = NULL;
+			token_array[i] = NULL;
 
-		return (argv);
+		return (token_array);
 }
