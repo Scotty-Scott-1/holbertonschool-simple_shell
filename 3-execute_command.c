@@ -15,6 +15,7 @@ int status_e)
 {
 	char *command = NULL, *full_path = NULL;
 	pid_t pid;
+
 	status_e = 0;
 
 	if (argv)
