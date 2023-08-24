@@ -62,11 +62,15 @@ Those are the available built-in functions :
  $ echo "/bin/ls" | ./hsh
 .br
  hsh simple_shell.c
- .SH Getting help
-Contact the contributors in github
-[Solomon Williams](https://github.com/Scotty-Scott-1) | (<swilliamfr@outlook.com>)
-[Gael Deschamps](https://github.com/GTDeschamps) | (<g.deschamps@hotmail.com>)
-[Leticia Habib](https://github.com/letihab) | (<letihabib1822@gmail.com>)
+.SH Getting help
+.B Contact the contributors in github :
+.br
+ [Solomon Williams](https://github.com/Scotty-Scott-1) | (<swilliamfr@outlook.com>)
+.br
+ [Gael Deschamps](https://github.com/GTDeschamps) | (<g.deschamps@hotmail.com>)
+.br
+ [Leticia Habib](https://github.com/letihab) | (<letihabib1822@gmail.com>)
 .SH HISTORY
-14th August to 25th August originally written by Gael, Leticia, Solomon
-Present day: maintained by Gael, Leticia, Solomon
+ 14th August to 25th August originally written by Gael, Leticia, Solomon
+.br
+ Present day: maintained by Gael, Leticia, Solomon
