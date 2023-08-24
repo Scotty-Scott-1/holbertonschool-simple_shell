@@ -114,4 +114,4 @@ There are no known bugs.
 
 [Gael Deschamps](https://github.com/GTDeschamps) | (<g.deschamps@hotmail.com>)
 
-[Leticia HABIB](https://github.com/:letihab) | (<letihabib1822@gmail.com>)
+[Leticia Habib](https://github.com/:letihab) | (<letihabib1822@gmail.com>)
