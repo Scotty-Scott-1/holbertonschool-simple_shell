@@ -9,7 +9,6 @@
  * Return: void
  */
 void __exit(char *input, char *name, char *input_copy, char **argv, int stat)
-
 {
 
 	int i = 0;

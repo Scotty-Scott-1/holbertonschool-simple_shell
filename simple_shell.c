@@ -14,8 +14,8 @@ int main(int ac, char **argv)
 	char *progam_name = argv[0];
 	char **token_array;
 	int status = 0;
-	(void) ac;
 
+	(void) ac;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO) == 1)

@@ -26,13 +26,13 @@ char **tokenize_array(char *input, char **argv, char *input_copy)
 			token = strtok(NULL, delim);
 
 		}
+
 		token_count++;
 
 		token_array = malloc(sizeof(char *) * token_count);
 
 		for (i = 0, token = strtok(input_copy, delim); token != NULL; i++)
 		{
-			/*argv[i] = malloc(strlen(token) + 1);*/
 			token_array[i] = strdup(token);
 			token = strtok(NULL, delim);
 		}

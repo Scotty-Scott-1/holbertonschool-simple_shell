@@ -27,14 +27,12 @@ int status_e)
 			pid = fork();
 			if (pid == 0)
 			{
-				if (execve(full_path, argv, environ) == -1)
-				{
-					status_e = 127;
-					return (status_e);
-				}
+				execve(full_path, argv, environ);
 			}
+
 			wait(&status_e);
 			free(full_path);
+
 			if (WEXITSTATUS(status_e) == 2)
 			{
 			status_e = 2;
@@ -44,13 +42,11 @@ int status_e)
 		else
 		{
 			printf("%s: %d: %s: not found\n", program_name, i, input);
-
 			status_e = 127;
 			return (status_e);
 		}
 		status_e = 0;
 		return (status_e);
 	}
-
 	return (status_e);
 }
