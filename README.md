@@ -106,7 +106,7 @@ There are no known bugs.
 
 ## FlowChart
 
-![Complete Flowchart](https://github.com/Scotty-Scott-1/holbertonschool-simple_shell/blob/main/Complete%20FlowChart.jpg?raw=true)
+![Complete Flowchart](https://github.com/Scotty-Scott-1/holbertonschool-simple_shell/blob/main/complete_flowchart.jpg)
 
 ## Authors
 
