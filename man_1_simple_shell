@@ -32,10 +32,10 @@ A "simple shell" refers to a type of computer program that provides a command-li
 Those are the available built-in functions :
 .br
  -exit : exit the shell
-.SH EXIT STATUS
-to exit the programm, you must execute the exit command. otherwise, the programme return to the waiting prompt mode.
-.SH RETURN VALUE
-Return 0 on success, otherwise it will return error code.
+.SH Exit status
+0 – on exit and successful execution
+127 – command not found
+2 – not such file or directory
 .SH ENVIRONMENT
 -PATH
 .br
@@ -62,5 +62,15 @@ Return 0 on success, otherwise it will return error code.
  $ echo "/bin/ls" | ./hsh
 .br
  hsh simple_shell.c
-.SH AUTHORS
-Leticia Habib, Solomon William, Gaël Deschamps
+.SH Getting help
+.B Contact the contributors in github :
+.br
+ [Solomon Williams](https://github.com/Scotty-Scott-1) | (<swilliamfr@outlook.com>)
+.br
+ [Gael Deschamps](https://github.com/GTDeschamps) | (<g.deschamps@hotmail.com>)
+.br
+ [Leticia Habib](https://github.com/letihab) | (<letihabib1822@gmail.com>)
+.SH HISTORY
+ 14th August to 25th August originally written by Gael, Leticia, Solomon
+.br
+ Present day: maintained by Gael, Leticia, Solomon
