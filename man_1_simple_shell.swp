@@ -1,15 +1,16 @@
 TH SIMPLE_SHELL "23 Août 2023" GNU "Simple_Shell man page"
 .SH NAME
-.B hsh
-- Command line interpreter (shell)
+Simple Shell \- a new Simple Shell created for an exercice utilisable in C language.
 .SH SYNOPSIS
+.B ./hsh \fR[OPTION]... [FILE]...
 The shell is executed by typing ./hsh
+
+To execute it you have to execute this commande : gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
+After you can do ./hsh to enter in the Simple Shell or do "cat test_ls_2 | ./hsh" to execute it in the terminal.
 .br
 Then, it will wait for an input such as : command [arguments] [other]
-.SH DESCRIPTION
-.br
-first quarter end project; consisting of recreating a Simple Shell program in C language.
-.br
+
 A "simple shell" refers to a type of computer program that provides a command-line user interface to interact with an operating system. The term "shell" denotes a command-line environment that allows the user to input textual commands to execute operations and programs on an operating system.
 .br
 .B What hsh can do :
