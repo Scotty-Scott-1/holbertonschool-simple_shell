@@ -1,5 +1,6 @@
 <p>
-<img width="200" src=>
+<img width="200" src=(https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
+>
 </p>
 
 # Simple_shell project
@@ -43,11 +44,34 @@ File | Description
    - Clone this repository: `git clone git@github.com:Scotty-Scott-1/holbertonschool-simple_shell.git`
 
 ## Compile
+Your shell will be compiled this way:
+```
    - `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-
+```
 ## Execute
-   - Run the shell in interactive mode: `./hsh`
-   - Or run the shell in non-interactive mode: `echo "/bin/ls" | ./hsh`
+Your shell should be run in the interactive mode:
+```
+$ ./hsh
+$ /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+```
+ but also  run in non-interactive mode: 
+ ```
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+```
 
 ## Example
 Run the executable in your terminal after compiling:
@@ -74,8 +98,8 @@ drwxr-xr-x  8 letihabib letihabib  4096 Aug 23 18:49  .git
 -rw-r--r--  1 letihabib letihabib   716 Aug 22 23:43  main.h
 -rw-r--r--  1 letihabib letihabib  1599 Aug 23 17:54  man_1_simple_shell.swp
 -rw-r--r--  1 letihabib letihabib  1150 Aug 23 18:49  simple_shell.c
-
-
+$
+```
 
 ## Bugs
 There are no known bugs.
