@@ -24,7 +24,7 @@ Unix shell is a command-line interpreter or shell written by Ken Thompson in 197
 ## Files
 File | Description
 --- | ---
-`main.h` | header file 
+`main.h` | header file
 `1-copy_input.c` | function that retrieves and prints a user's character string
 `2-tokenize.c` | Funtion tha tokenizes the string using two points as delimiters.
 `3-execute_command.c` | Function that check and execute array of token
@@ -58,7 +58,7 @@ hsh main.c shell.c
 ($) exit
 $
 ```
- but also  run in non-interactive mode: 
+ but also  run in non-interactive mode:
  ```
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
@@ -110,8 +110,8 @@ There are no known bugs.
 
 ## Authors
 
-[Solomon Williams](https://github.com/:Scotty-Scott-1) | (<swilliamfr@outlook.com>)
+[Solomon Williams](https://github.com/Scotty-Scott-1) | (<swilliamfr@outlook.com>)
 
 [Gael Deschamps](https://github.com/GTDeschamps) | (<g.deschamps@hotmail.com>)
 
-[Leticia Habib](https://github.com/:letihab) | (<letihabib1822@gmail.com>)
+[Leticia Habib](https://github.com/letihab) | (<letihabib1822@gmail.com>)
