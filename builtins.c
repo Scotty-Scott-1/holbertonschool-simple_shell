@@ -47,5 +47,6 @@ int env(char **cmd)
 		}
 	}
 	*cmd = NULL;
+
 	return (0);
 }
